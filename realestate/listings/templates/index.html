@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html>
 <head>
+    {% load static %}
     <style>
         nav {
             background-color: blue;
@@ -21,6 +23,32 @@
             padding: 10px;
         }
 
+        form {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+            
+        }
+
+        #search {
+            background-image: url('{% static 'bg.jpg' %}');
+            padding: 100px;
+        }
+
+        #searchbox {
+            background-color: rgba(10, 10, 10, 0.2);
+            padding: 10px;
+        }
+
+        input[name="keyword"] { grid-area: 1 / 1 / 2 / 3; }
+        input[name="city"]  { grid-area: 1 / 3 / 2 / 5; }
+        select[name="district"] { grid-area: 1 / 5 / 2 / 7; }
+        select[name="bedroom"] { grid-area: 2 / 1 / 3 / 4; }
+        input[name="maxprice"] { grid-area: 2 / 4 / 3 / 7; }
+        button[name="submit"] { grid-area: 3 / 1 / 5 / 7; }
+
 
     </style>
 </head>
@@ -39,5 +67,31 @@
             </ul>
         </nav>
     </header>
+    <div id="search">
+        <div id="searchbox">
+            <div>
+                <h1>Property Searching Just Got Easy</h1>
+                <p>Lorem ipsun machin tr</p>
+            </div>
+            <div class="form">
+                <form>
+                    <input type="text" placeholder="Keyword (Pool, Garage, etc)" name="keyword"/>
+                    <input type="text" placeholder="City" name="city"/>
+                    <select name="district">
+                        <option name="port-louis">Port Louis</option>
+                        <option name="Flacq">Flacq</option>
+                    </select>
+                    <select name="bedroom">
+                        <option name="0">Bedroom (all)</option>
+                        <option name="1">1</option>
+                        <option name="2">2</option>
+                    </select>
+                    <input type="number" placeholder="Max Price" name="maxprice">
+                    <button name="submit" type="submit">Submit</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
 </body>
 </html>
