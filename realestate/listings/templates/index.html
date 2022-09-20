@@ -26,4 +26,28 @@
         </div>
     </div>
 </section>
+<section>
+    <h1>Listings</h1>
+    <ul>
+    {% for house in houses %}
+        <li class="listings">
+            <div style="max-width: 30%;border: 2px solid #000;">
+                <div style="position:relative;background-image: url('static/{{  house.logo }}'); background-size:contain;background-repeat: no-repeat;height: 200px;">
+                    <span style="top: 10px; left: 10px;position: absolute;background-color: aqua; padding: 15px">{{ house.price }}</span>
+                    
+                </div>
+                <h3>{{ house.address1 }}</h3>
+                <h4>{{ house.address2 }}</h4>
+                <hr>
+                <div style="display: grid;grid-template-columns: 1fr 1fr;grid-template-rows: 1fr 1fr; grid-gap: 10px">
+                    <span>Sqrt: {{ house.size }}</span>
+                    <span>Garage: {{ house.garage }}</span>
+                    <span>Bedroom: {{ house.bedroom }}</span>
+                </div>
+            </div>
+            
+        </li>
+    {% endfor %}
+    </ul>
+</section>
 {% endblock %}
