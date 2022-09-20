@@ -28,10 +28,10 @@
 </section>
 <section>
     <h1>Listings</h1>
-    <ul>
+    <ul style="display: grid; grid-template-columns: repeat(3,1fr);">
     {% for house in houses %}
         <li class="listings">
-            <div style="max-width: 30%;border: 2px solid #000;">
+            <div style="border: 2px solid #000;">
                 <div style="position:relative;background-image: url('static/{{  house.logo }}'); background-size:contain;background-repeat: no-repeat;height: 200px;">
                     <span style="top: 10px; left: 10px;position: absolute;background-color: aqua; padding: 15px">{{ house.price }}</span>
                     
